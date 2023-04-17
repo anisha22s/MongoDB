@@ -11,7 +11,7 @@ Original file is located at
 
 #################Selenium:  The Bored Ape Yacht Club#################
 
-#According to Wikipedia, “[The] Bored Ape Yacht Club […] is a non-fungible token (NFT) collection built on 
+#“[The] Bored Ape Yacht Club […] is a non-fungible token (NFT) collection built on 
 #the Ethereum blockchain.  The collection features profile pictures of cartoon apes that are procedurally generated 
 #by an algorithm.  […]  As of 2022, [Bored Ape Yacht Club’s parent company,] Yuga Labs, is valued at US$4 billion. 
 # This is due in large part to the sales of the Bored Ape Yacht Club NFT collection totaling over US$1 billion.  
@@ -41,7 +41,7 @@ import re
 os.chdir('/Applications/') #*********please mention the working directory where your chrome driver is before running
 working_direc = os.getcwd()
 
-def Q2(working_direc):
+def fun2(working_direc):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
     }
@@ -74,14 +74,14 @@ def Q2(working_direc):
         time.sleep(5)
     
     time.sleep(2)
-Q2(working_direc)
+fun2(working_direc)
 
 #################MongoDB#################
 #We will Write code that goes through all 8 htm files downloaded in (2) and stores each ape’s name 
 #(its number) and all its attributes in a document inside a MongoDB collection called “bayc”.
 
 
-def Q3():
+def fun3():
     
     client = MongoClient('mongodb://localhost:27017/') #connecting to mongodb server
     db = client['bayc'] #creating a database
@@ -106,5 +106,5 @@ def Q3():
                     # Store each ape's search resutl number, name and all attributes in a MongoDB collection
                     doc = {'i': i, 'name': name, 'attributes': attributes}
                     collection.insert_one(doc)
-Q3()                   
+fun3()                   
  
